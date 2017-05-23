@@ -3,7 +3,7 @@ import random
 from GA import*
 
 boardSize = 4 #Number of Queens
-numPopulation = 10 # number of total population
+numPopulation = 4 # number of total population
 population = [] # list of population
 maxGen = 1000 # maximum genaration
 permList = [] # list for permutation
@@ -12,18 +12,26 @@ totalFitness = 0
 fitnessPercent = []
 
 
-permList = list(permutations(range(0, boardSize)))
-random.shuffle(permList)
+# permList = list(permutations(range(0, boardSize)))
+# random.shuffle(permList)
+#
+# # taking population
+# i = 0
+# while(i < numPopulation):
+#     population.append(permList[i])
+#     i += 1
 
-# taking population
-i = 0
-while(i < numPopulation):
-    population.append(permList[i])
-    i += 1
+k=0
+l =[]
+while(k < numPopulation):
+    l = [i for i in range(boardSize)]
+    random.shuffle(l)
+    population.append(l)
+    k +=1
 
 # for i in population:
 #     print(i)
-testPop = [[0,1,2,3],[1,2,0,3],[3,2,0,1],[2, 1,0,3]]
+#testPop = [[0,1,2,3],[1,2,0,3],[3,2,0,1],[2, 1,0,3]]
 # for i in testPop:
 #     print(i)
 
